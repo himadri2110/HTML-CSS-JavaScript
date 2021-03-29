@@ -4,13 +4,6 @@ const todoButton = document.querySelector('.todo-button');
 const todoList = document.querySelector('.todo-list');
 const todoFilter = document.querySelector('.filter');
 
-// node = document.createElement("li");
-// textNode = document.createTextNode(todoInput);
-// node.appendChild(textNode);
-// //newNode = document.getElementsByClassName("todo-list").appendChild(node);
-
-// document.getElementsByClassName("todo-list").innerHTML = node;
-
 // Event Listener
 todoButton.addEventListener('click', addTodo);
 todoList.addEventListener('click', deleteCheck);
@@ -24,21 +17,7 @@ function addTodo(event) {
         //Create div
         const todoDiv = document.createElement('div');
         todoDiv.classList.add('todo');
-
-        // //Checkbox 
-        // const checkBox = document.createElement('input');
-        // checkBox.type = 'checkbox';
-        // checkBox.id = todoInput.value;
-        // checkBox.classList.add('checked');
-        // todoDiv.appendChild(checkBox);
-
-        // //Create Label 
-        // const label = document.createElement('label');
-        // label.for = todoInput.value;
-        // label.innerText = todoInput.value;
-        // label.classList.add('todo-label');
-        // todoDiv.appendChild(label);
-
+        
         //Create Li 
         const todoLi = document.createElement('li');
         todoLi.innerText = todoInput.value;
@@ -81,7 +60,6 @@ function deleteCheck(e) {
     }
 
 }
-
 
 function filterTodo(e) {
     const todos = todoList.childNodes;
