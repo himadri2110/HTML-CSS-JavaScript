@@ -1,0 +1,173 @@
+:root {
+    --lightBlue: rgb(99, 185, 255);
+    --darkBlue: rgb(31, 76, 199);
+    --todoBg: rgba(240, 240, 240, 0.671);
+    --green: rgb(45, 209, 45);
+    --red: rgb(255, 27, 27);
+    --footerBg: #ececec7a;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html, body {
+    background-image: linear-gradient(90deg, var(--lightBlue), var(--darkBlue));
+    color: white;
+    user-select: none;
+    margin: 0;
+    min-height: calc(100vh - 1rem);
+    position: relative;
+}
+
+/* Only for FOOTER */
+body::after {
+    content: '';
+    display: block;
+    height: 3rem;
+}
+
+header, form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem 0;
+    font-size:1.5rem;
+}
+
+form input{
+    min-width: 40%;
+    border-radius: 5px 0 0 5px;
+}
+
+form input, form button {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    background-color: white;
+    border: none;
+}
+
+form button {
+    background-color: var(--lightBlue);
+    color: white;
+    cursor: pointer;
+    transition: all 0.5s ease;
+    border-radius: 0px 5px 5px 0px;
+    min-width: 10%;
+}
+
+input:focus, button:focus {
+    outline: none;
+}
+
+select {
+    outline: none;
+    border: none;
+    cursor: pointer;
+    width: 7rem;
+    padding: 0.5rem;
+    border-radius: 5px;
+    margin-top: -0.5rem;
+    margin-bottom: 0.5rem;
+    font-size: 0.75rem;
+}
+
+.select {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem;
+}
+
+.todo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.todo-list {
+    min-width: 50%;
+    list-style: none;
+    border-radius: 5px;
+}
+
+.todo {
+    background-color: white;
+    color: black;
+    margin: 0.5rem 0;
+    font-size: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.5s ease;
+    border-radius: 5px;
+}
+
+.todo li {
+    flex: 1;
+    padding: 0 1rem;
+}
+
+.check, .delete{
+    font-size: 1rem;
+    border: none;
+    padding: 0.5rem 0.75rem;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+
+.unchecked {
+    text-decoration: line-through;
+    color: #ccc;
+    opacity: 0.7;
+}
+
+.check {
+    color: white;
+    background-color: var(--green);
+}
+
+button.delete {
+    border-radius: 0 5px 5px 0;
+}
+
+.delete {
+    color: white;
+    background-color: var(--red);
+}
+
+.fall {
+    transform: translateY(8rem);
+    opacity: 0;
+}
+
+.fa-check, .fa-trash {
+    pointer-events: none;
+}
+
+footer {
+    background-color: var(--footerBg);
+    color: black;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 2rem;
+    line-height: 2rem;
+    display: flex;
+    justify-content: center;
+}
+
+@media (max-width: 768px) {
+    form input {
+        min-width: 50%;
+    }
+    form button {
+        min-width: 10%;
+    }
+    .todo-list{
+        min-width: 60%;
+    }
+}
