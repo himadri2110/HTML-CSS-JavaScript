@@ -1,0 +1,359 @@
+:root {
+    --orange:     rgb(255, 115, 0);
+    --dark-blue:  rgb(2, 48, 71);
+    --mid-blue:   rgb(33, 158, 188);
+    --light-blue: rgb(142, 202, 230);
+
+    --bord-rad: 0.35rem;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Quicksand', sans-serif;   
+    border: 0px solid red;
+}
+
+body {
+    background-color: var(--light-blue);
+}
+
+div.title {
+    color: white;
+    font-weight: bold;
+    font-size: 4rem;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 0 0 0.5rem 0.5rem ;
+    border-bottom: 0.5rem solid white;
+    background-color: var(--mid-blue);
+}
+
+button.newBtn {
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    font-weight: bold;
+    letter-spacing: 0.05rem;
+    color: white;
+    background-color: var(--dark-blue);
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    border-radius: 0.25rem;
+    border-bottom: 0.25rem solid white;
+}
+
+
+/* CARD */
+
+div.card {
+    display: none;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+div.book {
+    text-align: left;
+    background-color: var(--mid-blue);
+    color: white;
+    margin: 1rem;
+    padding: 0.5rem;
+    width: 28vw;
+    border-radius: var(--bord-rad);
+    border-bottom: 0.35rem solid white;
+    box-shadow: 2px 10px 10px 2px var(--light-blue);
+}
+
+div.checked {
+    transition: all 0.7s ease;
+    opacity: 0.7;
+    filter: blur(1px);
+}
+
+div.cardTitle, div.cardAuthor, div.cardPage, div.cardLang, div.cardRead {
+    margin: 0.5rem; 
+    overflow: hidden;
+}
+
+div.cardTitle {
+    text-align: center;
+    border-bottom: 0.1rem solid white;
+    padding: 0 0.5rem 0.5rem;
+    margin-top: 0;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+div.cardAuthor::before {
+    content: 'By: ';
+    font-style: normal;
+}
+
+div.cardAuthor, div.cardPage, div.cardLang, div.cardRead {
+    font-size: 1.2rem;
+}
+
+div.cardLang::before {
+    content: 'Language: ';
+}
+
+div.cardPage::before {
+    content: 'Pages: ';
+}
+
+div.cardRead::before {
+    content: 'Read: ';
+}
+
+.cardRead > input {
+    outline: none;
+    border: 1px solid var(--orange);
+    box-shadow: none;
+    cursor: pointer;
+    height: 1rem;
+    width: 1rem;
+    background-color: white;
+    vertical-align: middle;
+}
+
+div.crossmark {
+    text-align: right;
+    margin: 0 0.5rem;
+    color: rgba(255, 255, 255, 0.555);
+}
+
+div.crossmark:hover {
+    color: white;
+    transition: all 1s ease;
+}
+
+div.crossmark i {
+    cursor: pointer;
+}
+
+/* .animate-bottom {
+    position: relative;
+    animation: animatebottom 0.4s;
+}
+  
+@keyframes animatebottom {
+    from {
+      top: 40%;
+      opacity: 0;
+    }
+  
+    to {
+      bottom: 0;
+      opacity: 1;
+    }
+} */
+
+div.form {
+    /* For centering the form */
+    display: none;
+    z-index: 1;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -60%);
+
+    /* Animate the form */
+    /* transition: top 1s cubic-bezier(0.17, 0.04, 0.03, 0.94);
+    -webkit-transition: top 1s cubic-bezier(0.17, 0.04, 0.03, 0.94);
+    animation: animateForm 2s ease;  */
+
+    text-align: center;
+    margin: auto;
+    width: 40vw;
+
+    background-color: var(--dark-blue);
+    color: white;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    border-radius: var(--bord-rad);
+}
+
+p {
+    padding: 1rem;
+    font-size: 2rem;
+    font-weight: bold;
+    background-color: var(--mid-blue);
+    border-radius: var(--bord-rad);
+    border-bottom: 0.35rem solid white;
+}
+
+div.table-div {
+    margin: 1rem;
+}
+
+table#table {
+    text-align: center;
+    margin: 0.5rem; 
+    margin: auto;
+}
+
+.form input {
+    display: block;
+    text-align: left;
+    align-items: center;
+    width: 90%;
+    font-size: 1.25rem;
+    margin: auto;
+    margin-top: 0.5rem;
+    padding: 0.15rem 0.25rem;
+    border: none;
+    background-color: var(--dark-blue);
+    color: white;
+    border-bottom: 0.2rem solid white;
+    border-radius: 0.2rem;
+    outline: none;
+}
+
+input::-webkit-inner-spin-button, input::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+}
+
+td {
+    text-align: left; /* for left-aligning the span tag */
+}
+
+span {
+    color: var(--orange);
+    font-size: 0.75rem;
+}
+
+div.add-cancel{
+    color: white;
+    border-radius: 0 0 0.35rem 0.35rem;
+    border-bottom: 0.35rem solid white;
+}
+
+div.add-cancel button {
+    font-size: 1.25rem;
+    font-weight: bold;
+    letter-spacing: 0.05rem;
+    padding: 1rem;
+    color: white;
+    cursor: pointer;
+    text-align: center;
+    display: block;
+    width: 50%;
+    border: none;
+    background-color: var(--mid-blue);
+}
+
+button.cancel {
+    float: left;
+}
+
+
+/* MEDIA QUERIES */
+
+@media all and (min-width: 1100px) {
+    div.book {
+        width: 28vw; 
+    }
+
+    div.form{
+        width: 35vw;    
+    }
+    .form input {
+        padding: 0.5rem;
+        width: 18vw;
+    }
+}
+
+@media all and (max-width: 1100px) {
+    div.book {
+        width: 40vw; /* 1 in 1 row */
+    }
+    .form input {
+        width: 25vw;
+        padding: 0.5rem;
+    }
+}
+
+@media all and (max-width: 800px) {
+    div.form {
+        width: 50vw;
+    }
+    p {
+        font-size: 1.5rem;
+    }
+    .form input {
+        font-size: 1.15rem;
+        align-items: center;
+        padding: 0.5rem;
+        margin: auto;
+        margin-bottom: 0rem;
+        width: 30vw;
+    }
+    div.add-cancel button {
+        font-size: 1.25rem;
+    }
+
+    div.book {
+        width: 40vw; /* 2 in 1 row */
+    }
+
+    div.cardTitle {
+        font-size: 1.75rem;
+    }
+    div.cardAuthor, div.cardPage, div.cardLang, div.cardRead {
+        font-size: 1.15rem;
+    }
+}
+
+@media all and (max-width: 650px) {
+    div.title {
+        font-size: 3rem;
+        padding: 0.75rem;
+    }
+    button.newBtn {
+        font-size: 1rem;
+    }
+    div.form {
+        width: 60vw;
+    }
+    p {
+        font-size: 1.35rem;
+    }
+    .form input {
+        font-size: 1rem;
+        align-items: center;
+        padding: 0.5rem;
+        margin: auto;
+        
+        width: 50vw;
+    }
+    div.add-cancel button {
+        font-size: 1.1rem;
+    }
+
+    div.book {
+        width: 60vw; /* 1 in 1 row */
+    }
+
+    div.cardTitle {
+        font-size: 1.5rem;
+    }
+    div.cardAuthor, div.cardPage, div.cardLang, div.cardRead {
+        font-size: 1rem;
+    }
+}
+
+@media all and (max-width: 500px) {
+    div.form {
+        width: 80vw;
+    }
+
+    div.book {
+        width: 80vw; /* 1 in 1 row */
+    }
+}

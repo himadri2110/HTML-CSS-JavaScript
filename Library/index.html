@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- FAVICON -->
+    <link rel="icon" href="https://cdn.pixabay.com/photo/2019/11/10/12/52/books-4615741__340.png" type="image/icon">
+
+    <!-- Google Fonts-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome Dowloaded-->
+    <link rel="stylesheet" href="all.min.css">
+        
+    <title>Library</title>
+</head>
+
+<body class="body">
+
+    <!-- FORM -->
+    <div class="form animate-bottom">
+        <p>Add New Book</p>
+
+        <form id="bookForm" action="#" method="post">
+            <div class="table-div">
+                <table id="table">
+
+                    <tr>
+                        <td><input type="text" id="bookTitle" placeholder="Title*" autocomplete="off" required></td>
+                    </tr>
+                    <tr>
+                        <td><span id="spanTitle"></span</td>
+                    </tr>
+
+                    <tr>
+                        <td><input type="text" id="bookAuthor" placeholder="Author*" autocomplete="off" required></td>
+                    </tr>
+                    <tr>
+                        <td><span id="spanAuthor"></span></td>
+                    </tr>
+
+                    <tr>
+                        <td><input type="text" id="bookLang" placeholder="Language*" autocomplete="off" required></td>
+                    </tr>
+                    <tr>
+                        <td><span id="spanLang"></span></td>
+                    </tr>
+
+                    <tr>
+                        <td><input type="number" id="bookPage" placeholder="Pages*" autocomplete="off" style="margin-bottom: 0;" required></td>
+                    </tr>
+                    <tr>
+                        <td><span id="spanPage"></span></td>
+                    </tr>
+                </table>        
+            </div>
+        
+            <div class="add-cancel">
+                <button class="cancel" type="button">Cancel</button>
+                <button class="add" type="button" form="bookForm">Add</button>
+            </div>
+
+        </form>
+        
+    </div>
+    
+<!-- BODY STARTS HERE -->
+    <div class="title">Library</div>
+
+    <div class="main">
+        <button class="newBtn" type="button">ADD BOOK</button>
+
+        <div class="card">
+            <!-- Just for reference, made dynamically using JS
+            <div class="book">
+            
+                <div class="crossmark"><i class="fa fa-times"></i></div>
+                <div id="cardTitle"></div>
+                <div id="cardAuthor"></div>
+                <div id="cardPage"></div>
+                <div id="cardRead"><input type="checkbox" class="checkbox"></div>
+            </div>
+            -->
+        </div>
+    </div>
+
+    <script type="text/javascript" src="main.js"></script>
+</body>
+
+</html> 
