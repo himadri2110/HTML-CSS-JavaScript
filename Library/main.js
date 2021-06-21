@@ -5,8 +5,9 @@ const form = document.querySelector('.form');
 const addBtn = document.querySelector('.add');
 const cancelBtn = document.querySelector('.cancel');
 
-const title = document.querySelector('.title');
+const nav = document.querySelector('.nav');
 const main = document.querySelector('.main');
+const footer = document.querySelector('.footer');
 
 //Select div of Card
 const card = document.querySelector('.card');
@@ -17,33 +18,28 @@ addBtn.addEventListener('click', validateForm);
 card.addEventListener('click', removeBook);
 
 function newBook() {
-    title.style.opacity = '0.5';
+    nav.style.opacity = '0.5';
     main.style.opacity = '0.5';
     
-    title.style.filter = 'blur(2px)';
+    nav.style.filter = 'blur(2px)';
     main.style.filter = 'blur(2px)';
+    footer.style.filter = 'blur(2px)';
 
     form.style.display = 'block';
 }
 
 function closeForm() {
-    title.style.opacity = '1';
+    nav.style.opacity = '1';
     main.style.opacity = '1';
     
-    title.style.filter = 'blur(0px)';
+    nav.style.filter = 'blur(0px)';
     main.style.filter = 'blur(0px)';
+    footer.style.filter = 'blur(0px)';
 
     form.style.display = 'none';
-
 }
 
 function validateForm() {
-
-    //Clear error from previous form validation
-    // document.getElementById('spanTitle').innerText = '';
-    // document.getElementById('spanAuthor').innerText = '';
-    // document.getElementById('spanLang').innerText = '';
-    // document.getElementById('spanPage').innerText = '';
 
     //Fetch values from Form
     const bookTitle = document.getElementById('bookTitle').value;
@@ -78,12 +74,6 @@ function validateForm() {
 }
 
 function addBook(bookTitle, bookAuthor, bookLang, bookPage) {
-    //id++;
-    //Fetch values from Form
-    // const bookTitle = document.getElementById('bookTitle').value;
-    // const bookAuthor = document.getElementById('bookAuthor').value;
-    // const bookLang = document.getElementById('bookLang').value;
-    // const bookPage = document.getElementById('bookPage').value;
 
     //Create new div for book
     const book = document.createElement('div');
@@ -92,8 +82,6 @@ function addBook(bookTitle, bookAuthor, bookLang, bookPage) {
 
     const cross = document.createElement('div');
     cross.classList.add('crossmark');
-    //cross.setAttribute('id', id);
-    //console.log(cross);
     cross.innerHTML = '<i class="fa fa-times"></i>';
     book.appendChild(cross);
 
@@ -132,18 +120,18 @@ function addBook(bookTitle, bookAuthor, bookLang, bookPage) {
     //Styling the card
     card.style.display = 'flex';
 
-    title.style.opacity = '1';
+    nav.style.opacity = '1';
     main.style.opacity = '1';
     
-    title.style.filter = 'blur(0px)';
+    nav.style.filter = 'blur(0px)';
     main.style.filter = 'blur(0px)';   
+    footer.style.filter = 'blur(0px)';   
 
     form.style.display = 'none';
     document.getElementById('bookForm').reset();
 }
 
 function removeBook(e) {
-
     const item = e.target;
     
     if(item.classList.contains('fa')) {
