@@ -1,4 +1,5 @@
 :root {
+    --white:      rgba(255, 255, 255, 0.61); 
     --orange:     rgb(255, 115, 0);
     --dark-blue:  rgb(2, 48, 71);
     --mid-blue:   rgb(33, 158, 188);
@@ -12,13 +13,17 @@
     margin: 0;
     font-family: 'Quicksand', sans-serif;   
     border: 0px solid red;
+    box-sizing: border-box;
 }
 
 body {
     background-color: var(--light-blue);
 }
 
-div.title {
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     color: white;
     font-weight: bold;
     font-size: 4rem;
@@ -30,10 +35,6 @@ div.title {
 }
 
 button.newBtn {
-    margin: auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     font-size: 1rem;
     font-weight: bold;
     letter-spacing: 0.05rem;
@@ -44,9 +45,7 @@ button.newBtn {
     outline: none;
     border: none;
     border-radius: 0.25rem;
-    border-bottom: 0.25rem solid white;
 }
-
 
 /* CARD */
 
@@ -60,7 +59,7 @@ div.card {
 
 div.book {
     text-align: left;
-    background-color: var(--mid-blue);
+    background-color: var(--dark-blue);
     color: white;
     margin: 1rem;
     padding: 0.5rem;
@@ -83,7 +82,7 @@ div.cardTitle, div.cardAuthor, div.cardPage, div.cardLang, div.cardRead {
 
 div.cardTitle {
     text-align: center;
-    border-bottom: 0.1rem solid white;
+    border-bottom: 0.05rem solid var(--white);
     padding: 0 0.5rem 0.5rem;
     margin-top: 0;
     font-size: 2rem;
@@ -137,23 +136,6 @@ div.crossmark i {
     cursor: pointer;
 }
 
-/* .animate-bottom {
-    position: relative;
-    animation: animatebottom 0.4s;
-}
-  
-@keyframes animatebottom {
-    from {
-      top: 40%;
-      opacity: 0;
-    }
-  
-    to {
-      bottom: 0;
-      opacity: 1;
-    }
-} */
-
 div.form {
     /* For centering the form */
     display: none;
@@ -163,15 +145,9 @@ div.form {
     left: 50%;
     transform: translate(-50%, -60%);
 
-    /* Animate the form */
-    /* transition: top 1s cubic-bezier(0.17, 0.04, 0.03, 0.94);
-    -webkit-transition: top 1s cubic-bezier(0.17, 0.04, 0.03, 0.94);
-    animation: animateForm 2s ease;  */
-
     text-align: center;
     margin: auto;
     width: 40vw;
-
     background-color: var(--dark-blue);
     color: white;
     margin-top: 2rem;
@@ -252,6 +228,30 @@ button.cancel {
     float: left;
 }
 
+/* Footer */
+html {
+    position: relative;
+}
+
+body {
+    min-height: 100vh;
+    padding-bottom: 5rem;
+    overflow: auto;
+}
+
+.footer {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2.5rem;
+    line-height: 2.5rem;
+    border-radius: 0.25rem 0.25rem 0 0;
+    border-top: 0.25rem solid white;
+    background-color: var(--mid-blue);
+    color: white;
+    text-align: center;
+}
 
 /* MEDIA QUERIES */
 
@@ -311,12 +311,14 @@ button.cancel {
 }
 
 @media all and (max-width: 650px) {
-    div.title {
+    nav {
         font-size: 3rem;
         padding: 0.75rem;
     }
     button.newBtn {
-        font-size: 1rem;
+        font-size: 0.85rem;
+        letter-spacing: 0;
+        padding: 0.5rem;
     }
     div.form {
         width: 60vw;
