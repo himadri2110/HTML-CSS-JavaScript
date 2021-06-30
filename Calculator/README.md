@@ -5,3 +5,6 @@ A JavaScript Calculator that allows the user to perform basic mathematical opera
 - Subtraction
 - Multiplication
 - Division
+
+## Live Site
+[Calculator](https://himadri-calculator.netlify.app/)
